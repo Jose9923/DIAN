@@ -35,7 +35,7 @@ class FirmaController extends Controller
             $xmlConPlaceholder = $this->agregarPlaceholderFirma($xmlsinfirma);
 
             // Intentar firmar el XML
-            $signed = $this->firmar($certificadop12, $clavecertificado, $xmlConPlaceholder, $UUIDv4, $doctype, $fechaEmision, $horaEmision);
+            $signed = $this->firmarConXmlSecLib($certificadop12, $clavecertificado, $xmlConPlaceholder, $UUIDv4, $doctype, $fechaEmision, $horaEmision);
 
             // Guardar el XML firmado en un archivo
             $filename = 'signed_' . $UUIDv4 . '.xml';
